@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <% include ../partials/header.ejs %>
+	</head>
+	<body>
+    <% include ../partials/nav.ejs %>
+    <br>
+    <div>
+      <h1>Chat App</h1>
+      <b><%= pd %></b>
+    </div>
+    <br>
+    <div>
+      <p><!--{{ pname }}--></p>
+      <p id="ptime2">{{ time }}</p>
+      <p id="pduration"></p>
+    </div>
+    <form class="frmlogin" action="/chatapp/messages" method="post">
+      <!--{% csrf_token %} -->
+      <div class="dvcont">
+        <label>ChatToken:</label><br>
+        <input class="cinpt" type="text" id="chattoken" name="chattoken" value="<%= chatsid %>" placeholder="chattoken" maxlength="90" readonly />
+      </div>
+      <div>
+        <input class="cinpt" type="text" id="guestalias" name="guestalias" placeholder="To" value="{{ guestalias }}" maxlength="90" readonly required />
+        <input class="cinpt" type="text" id="chatalias" name="chatalias" placeholder="From" value="{{ chatalias }}" maxlength="90" readonly required />
+        <input class="cinpt" type="text" id="alias" name="alias" placeholder="alias" value="{{ alias }}" maxlength="90" readonly required />
+        <input class="cinpt" type="text" id="projectrefnumber" name="projectrefnumber" placeholder="ref" value="<%= pd %>" maxlength="90" readonly hidden required />
+        <input class="cinpt" type="text" id="jobrefnumber" name="jobrefnumber" placeholder="ref" value="{{ jobrefnumber }}" maxlength="90" readonly hidden required />
+        <input class="cinpt" type="text" id="pfile" name="pfile" placeholder="pfile" value="{{ pfile }}" maxlength="90" readonly hidden required />
+        <input class="cinpt" type="text" id="lastupdate" name="lastupdate" placeholder="lastupdate" value="{{ lastupdate }}" maxlength="90" readonly hidden required />
+        <input class="cinpt" type="text" id="ddate" name="ddate" placeholder="ddate" value="{{ ddate }}" maxlength="90" readonly hidden required />
+      </div>
+      <div>
+        <p>
+          <input class="cinpt" type="text" id="subject" name="subject" placeholder="subject" value="{{ subject }}" maxlength="90" readonly required />
+          <input class="cinpt" type="number" id="chatduration" name="chatduration" placeholder="duration" value="{{ chatduration }}" min="0" readonly required />
+        </p>
+        <p>
+          <input class="cinpt" type="text" id="chatdate" name="chatdate" placeholder="chatdate" value="{{ chatdate }}" maxlength="90" readonly required /><br>
+          <input class="cinpt" type="number" id="chathour" name="chathour" placeholder="hour" value="{{ chathour }}" maxlength="90" readonly required />
+          <input class="cinpt" type="number" id="chatminute" name="chatminute" placeholder="minutes" value="{{ chatminute }}" maxlength="90" readonly required />
+          <input class="cinpt" type="number" id="chatsecond" name="chatsecond" placeholder="chatsecond" value="{{ chatsecond }}" maxlength="90" readonly required />
+        </p>
+        <p><b><!--{{ ddate }}--></b></p>
+        <p id="ptime"><p>
+      </div>
+      <p><textarea id="chatmessage" name="chatmessage" placeholder="Message." rows="3" maxlength="250">{{ chatmessage }}</textarea></p>
+      <p><input type="submit" id="btnDisConnect" value="DisConnect"/></p>
+    </form>
+    <hr>
+    <div class="divchat">
+      <video id="vchat1" autoplay playsinline controls="false" ></video>
+    </div>
+    <div class="divchat">
+      <video id="vchat2" autoplay playsinline controls="false" ></video>
+    </div>
+    <div class="divchat">
+      <video id="vchat3" autoplay playsinline controls="false" ></video>
+    </div>
+    <div class="divchat">
+      <video id="vchat4" autoplay playsinline controls="false" ></video>
+    </div>
+    <hr>
+    <p><textarea id="txtm" name="txtm" placeholder="Message." rows="3" maxlength="250"></textarea>
+    <p><input type="button" id="btnmess" value="Send" onclick="send()"/></p>
+    <hr>
+    <p>
+      <input type="button" id="btnReconect" value="Reconnect" onclick="preconnect()"/>
+      <input type="button" id="btnCall" value="Call" onclick="pcall()"/>
+      <input type="button" id="btnEnd" value="HangUp" onclick="pcallEnd()"/>
+    </p>
+    <div class="pmessage">
+      <p id="message">{{ chatmessage }}</p>
+    </div>
+    <div class="pmessages">
+      <span id="messages">{{ chatmessage }}</span>
+    </div>
+    <hr>
+    <div class="divinbox">
+      <h1>Inbox:</h1>
+      <p id="pinbox">Inbox:</p>
+    </div>
+    <hr>
+    <div>
+      <img src="/images/pro2020.jpg" alt="Pro...">
+    </div>
+    <hr>
+    <footer>
+      <br>
+      <div id="dvsize"></div>
+      <br>
+    </footer>
+    <!--{{ ip }}-->
+    <!--{{ year }}-->
+    <script src="/chatapp/webrtc/webrtcadapterlatest.js"></script>
+    <script src="/chatapp/peerjs/peerjs.min.js"></script>
+    <script src="/chatapp/js/chatp.js"></script>
+    <script src="/chatapp/js/chatws.js"></script>
+    <script src="/js/app.js"></script>
+	</body>
+</html>

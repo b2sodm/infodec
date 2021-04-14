@@ -1,0 +1,141 @@
+/*
+app.css
+Author: Brian
+*/
+
+header {
+  background-color: #8071;
+  border: 5px solid #777;
+  height: auto;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display:grid;
+}
+
+.navbar {
+  background-color: #000;
+  height: 40px;
+  float: left;
+  width: 90%;
+}
+
+.navbar:hover {
+  background-color: red;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.navbar ul li {
+  display: block;
+  position: relative;
+  float: left;
+  background-color: #faf;
+}
+
+.navbar ul li a {
+  display: block;
+  padding: 0;
+  border-style: dashed;
+  text-decoration: none;
+  width: 100px;
+  line-height: 30px;
+}
+
+.navbar1 li:hover {
+  background-color: yellow;
+}
+
+.navbar2 li:hover {
+  background-color: yellow;
+}
+
+.navbar1 ul {
+  position: absolute;
+  padding: 0;
+  left: 0;
+  display: none;
+}
+
+.navbar1 li:hover ul ul {
+  display: none;
+}
+
+.navbar1 li:hover ul {
+  display: block;
+}
+
+.navbar1 li li:hover ul {
+  display: block;
+  margin-left: 100px;
+  margin-top: -40px;
+}
+
+.show {
+  display: none;
+}
+
+.hbar:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#dvbar2 {
+  display: block;
+}
+
+#dvbar3 {
+  display: none;
+}
+
+.info {
+  float: left;
+  width: 25%;
+}
+
+.info img {
+  width: 25%;
+}
+
+@media screen and (max-width: 700px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+  }
+  #dvbar2 {
+    display: none;
+  }
+  #dvbar3 {
+    display: block;
+  }
+  .info {
+    width: 100%;
+  }
+  .charts{
+    -webkit-transform: rotate(90deg) translate(-9px, 6px);
+    transform: rotate(90deg) translate(-9px, 6px);
+  }
+  header{
+    position: relative;
+  }
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#dvsize {
+  background-color: #ffeebb;
+}
+
+footer {
+  background-color: #000000;
+}

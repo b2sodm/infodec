@@ -1,0 +1,36 @@
+{
+  "name": "chatappserver",
+  "version": "0.0.0",
+  "description": "chatappserver project",
+  "engines": {
+    "node": "12.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.1",
+    "eslint": "^5.9.0",
+    "express": "^4.17.1",
+    "peer": "^0.5.3",
+    "pem": "^1.14.4",
+    "ws": "^7.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "keywords": [
+    "node",
+    "chatappserver",
+    "express"
+  ],
+  "license": "MIT",
+  "optionalDependencies": {
+    "bufferutil": "^4.0.1",
+    "utf-8-validate": "^5.0.2"
+  }
+}

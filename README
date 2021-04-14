@@ -1,0 +1,5 @@
+$ cd chatserver
+$ node index.js
+App is now running at http://localhost:9000/
+Hit CTRL-C to stop the server
+2020-07-31T16:28:25.869Z ' 18:28:25 6fjvqos57d800000 0'
